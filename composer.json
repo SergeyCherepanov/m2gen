@@ -1,5 +1,5 @@
 {
-  "name": "SergeyCherepanov/magento2-generators",
+  "name": "sergeycherepanov/magento2-generators",
   "description": "Generate new classes for M2",
   "license": "MIT",
   "type": "magento2-module",
