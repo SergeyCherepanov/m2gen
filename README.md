@@ -8,6 +8,7 @@ With this module installed you will have access to new commands available via th
 - [ ] `generate:controller`
 - [ ] `generate:admin:grid`
 - [ ] `generate:admin:form`
+- [ ] `generate:module`
 
 ## Installation
 ```
