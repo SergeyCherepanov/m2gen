@@ -278,7 +278,7 @@ class Model
         $modelFqn  = str_replace('/', '\\', "{$moduleName}/Model/{$modelName}");
         $resourceModelFqn = str_replace('/', '\\', "{$moduleName}/Model/ResourceModel/{$modelName}");
         $collectionModel = Object::make(str_replace('/', '\\', "{$moduleName}/Model/ResourceModel/{$modelName}/Collection"));
-        $collectionModel->extend(Object::make('Magento\\Cms\\Model\\ResourceModel\\AbstractCollection'));
+        $collectionModel->extend(Object::make('Magento\\Framework\\Model\\ResourceModel\\Db\\Collection\\AbstractCollection'));
         $collectionModel->addMethod(
             Method::make('_construct')
                 ->setBody(
