@@ -289,7 +289,7 @@ class Model
                 )
         );
 
-        $this->dumpObject($collectionModel, "{$modulePath}/Model/ResourceModel/{$modelName}Collection.php", []);
+        $this->dumpObject($collectionModel, "{$modulePath}/Model/ResourceModel/{$modelName}/Collection.php", []);
 
         return $this;
     }
@@ -379,7 +379,7 @@ class Model
 
     protected function generateRepositoryModel($modulePath, $moduleName, $modelName, array $fields)
     {
-        $resourceModelName     = basename($modelName);
+        $resourceModelName     = basename($modelName) . 'Resource';
         $resourceModelFqn      = str_replace('/', '\\', "{$moduleName}/Model/ResourceModel/{$modelName}");
 
         $collectionFactoryName = 'CollectionFactory';
@@ -559,7 +559,7 @@ class Model
         );
 
         $this->dumpObject($model, "{$modulePath}/Model/{$modelName}Repository.php", [
-            $resourceModelFqn,
+            [$resourceModelName => $resourceModelFqn],
             $collectionFactoryFqn,
             $searchResultsFactoryFqn,
             $dataFactoryFqn,
@@ -618,7 +618,14 @@ class Model
         }
         sort($fqns);
         foreach ($fqns as $name) {
-            $file->addFullyQualifiedName(new FullyQualifiedName($name));
+            if (is_array($name)) {
+                $keys = array_keys($name);
+                $fqn = new FullyQualifiedName($name[$keys[0]]);
+                $fqn->setAlias($keys[0]);
+                $file->addFullyQualifiedName($fqn);
+            } else {
+                $file->addFullyQualifiedName(new FullyQualifiedName($name));
+            }
         }
         $file->setStructure($object);
         $this->filesystem->mkdir($fileDir, 0755);
