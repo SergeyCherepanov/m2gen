@@ -402,7 +402,7 @@ class Model
         $model = Object::make(str_replace('/', '\\', "{$moduleName}/Model/{$modelName}Repository"));
         $model->implement(Contract::make(str_replace('/', '\\', "{$moduleName}/Api/{$modelName}RepositoryInterface")));
 
-        $__constructBody = '        $this->resource = $resource;
+        $__constructBody = '        $this->resource             = $resource;
         $this->factory              = $factory;
         $this->collectionFactory    = $collectionFactory;
         $this->searchResultsFactory = $searchResultsFactory;
