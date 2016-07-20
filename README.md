@@ -12,5 +12,5 @@ With this module installed you will have access to new commands available via th
 
 ## Installation
 ```
-composer require sergeycherepanov/m2gen
+composer require scherepanov/m2gen
 ```
