@@ -289,7 +289,7 @@ class Model
                 )
         );
 
-        $this->dumpObject($collectionModel, "{$modulePath}/Model/ResourceModel/{$modelName}.php", []);
+        $this->dumpObject($collectionModel, "{$modulePath}/Model/ResourceModel/{$modelName}Collection.php", []);
 
         return $this;
     }
