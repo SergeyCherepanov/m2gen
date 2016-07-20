@@ -22,12 +22,12 @@ class Module
      * @param $path
      * @throws \Exception
      */
-    public function make($path)
+    public function generate($path)
     {
         if ($this->filesystem->exists($path)) {
             throw new \Exception("Error module already exists");
         }
 
-        return $this->filesystem->mkdir($path, 0700);
+        $this->filesystem->mkdir($path, 0700);
     }
 }

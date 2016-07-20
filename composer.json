@@ -6,7 +6,9 @@
   "require": {
     "php": "~5.6.0|~7.0.0",
     "symfony/yaml": "2.*",
-    "symfony/filesystem": "~2"
+    "symfony/filesystem": "~2",
+    "symfony/serializer": "~3",
+    "memio/memio": "^1.0"
   },
   "require-dev": {
     "phpspec/phpspec": "^2.4.1",

@@ -1,17 +1,15 @@
 # Fast Workflow in Magento 2 With Custom Generators
-* WIP * This module is still under active development and should be considered alpha
+* WIP * This module is still under development
 
-With this module installed you will have access to many new commands available via the magento CLI. These are intended to speed up the developer workflow
+With this module installed you will have access to new commands available via the magento CLI. These are intended to speed up the developer workflow
 
-- `generate:model`
-- `generate:view`
-- `generate:controller`
-- `generate:resource-model`
-- `generate:collection`
-- `generate:repository`
-- `generate:helper`
-- `generate:interface` 
+- [x] `generate:model`
+- [ ] `generate:view`
+- [ ] `generate:controller`
+- [ ] `generate:admin:grid`
+- [ ] `generate:admin:form`
 
 ## Installation
-
-TBC
+```
+composer require sergeycherepanov/m2gen
+```
